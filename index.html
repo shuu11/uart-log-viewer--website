@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UART Log Viewer — Real-Time Serial Monitoring for Embedded Engineers</title>
+  <meta name="description" content="Capture and analyze UART serial data with ~1ms timestamp precision. HEX/DEC/ASCII simultaneous display, F1–F10 macro slots, auto CSV logging. Windows 11 desktop app.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">UART<span>Log</span>Viewer</a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="tokushoho.html">Specified Commercial Transactions Act</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <span class="hero-eyebrow">Windows 11 Desktop App</span>
+    <h1 class="hero-title">
+      Real-Time <span class="accent">UART</span> Monitoring<br>for Embedded Engineers
+    </h1>
+    <p class="hero-subtitle">
+      Capture, visualize, and analyze serial data with ~1ms timestamp precision.
+      Built on a Rust backend for deterministic I/O — no GC jitter, no missed frames.
+    </p>
+    <p class="hero-platform">[ Windows 11 &nbsp;/&nbsp; MCU Development ]</p>
+
+    <!-- Terminal mock readout — the differentiating element -->
+    <div class="hero-terminal" role="img" aria-label="Sample UART log output showing grid columns with HEX bytes and ASCII">
+      <div class="terminal-titlebar">
+        <span class="terminal-dot"></span>
+        <span class="terminal-dot"></span>
+        <span class="terminal-dot"></span>
+        <span class="terminal-title">UART Log Viewer &mdash; COM3 &nbsp;115200 baud</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-header-row">
+          <span>#</span>
+          <span>+00</span>
+          <span>+01</span>
+          <span>+02</span>
+          <span>+03</span>
+          <span>+04</span>
+          <span>+05</span>
+          <span>+06</span>
+          <span>+07</span>
+          <span>ASCII</span>
+        </div>
+        <div class="terminal-row">
+          <span class="t-row-num">1</span>
+          <span class="t-hex">FF</span>
+          <span class="t-hex">A0</span>
+          <span class="t-hex">01</span>
+          <span class="t-hex">0D</span>
+          <span class="t-dim">--</span>
+          <span class="t-dim">--</span>
+          <span class="t-dim">--</span>
+          <span class="t-dim">--</span>
+          <span class="t-ascii">....</span>
+        </div>
+        <div class="terminal-row terminal-row-tx">
+          <span class="t-row-num">2</span>
+          <span class="t-hex">55</span>
+          <span class="t-hex">AA</span>
+          <span class="t-hex">10</span>
+          <span class="t-hex">20</span>
+          <span class="t-hex">30</span>
+          <span class="t-hex">40</span>
+          <span class="t-hex">0D</span>
+          <span class="t-hex">0A</span>
+          <span class="t-ascii">U...0@..</span>
+        </div>
+        <div class="terminal-row">
+          <span class="t-row-num">&nbsp;</span>
+          <span class="t-hex">FE</span>
+          <span class="t-hex">DC</span>
+          <span class="t-hex">BA</span>
+          <span class="t-hex">98</span>
+          <span class="t-hex">76</span>
+          <span class="t-hex">54</span>
+          <span class="t-dim">--</span>
+          <span class="t-dim">--</span>
+          <span class="t-ascii">.......</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#pricing" class="btn btn-primary">Start Free 14-Day Trial</a>
+      <a href="#pricing" class="btn btn-outline">Buy Now &mdash; $49</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Features -->
+  <section id="features">
+    <p class="section-label">// Features</p>
+    <h2 class="section-title">Built for the workbench, not the boardroom</h2>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon-wrap" aria-hidden="true">
+          <!-- Clock icon -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="feature-title">~1ms Timestamp Precision</h3>
+        <p class="feature-desc">
+          Dual monotonic + wall-clock timestamps captured at the Rust thread level — before any OS scheduling delay.
+          HEX, DEC, and ASCII columns displayed side by side for every frame. Virtual scroll handles 10,000+ entries without freezing.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-wrap" aria-hidden="true">
+          <!-- Keyboard icon -->
+          <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2" ry="2"/><line x1="6" y1="10" x2="6" y2="10"/><line x1="10" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="14" y2="10"/><line x1="18" y1="10" x2="18" y2="10"/><line x1="6" y1="14" x2="18" y2="14"/></svg>
+        </div>
+        <h3 class="feature-title">F1&ndash;F10 Macro Slots</h3>
+        <p class="feature-desc">
+          Store your most-used commands in 10 persistent slots. HEX, ASCII, and DEC input formats all supported.
+          Fire any macro with a single keystroke during a live session — no reaching for the mouse.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-wrap" aria-hidden="true">
+          <!-- Save icon -->
+          <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+        </div>
+        <h3 class="feature-title">Auto CSV Logging</h3>
+        <p class="feature-desc">
+          Automatically write every received frame to disk in CSV format with configurable column width.
+          Open directly in Excel for post-session analysis. Start and stop recording with one click.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <p class="section-label">// Pricing</p>
+    <h2 class="section-title">One price. Yours forever.</h2>
+    <div class="pricing-wrapper">
+      <div class="pricing-card">
+        <span class="pricing-badge">Pro License</span>
+        <p class="pricing-label">One-Time Purchase</p>
+        <p class="pricing-price">$49</p>
+        <p class="pricing-price-note">Lifetime license &mdash; no subscription</p>
+        <ul class="pricing-features">
+          <li>Full feature access</li>
+          <li>14-day free trial included</li>
+          <li>Windows 11 (64-bit)</li>
+          <li>License key delivered instantly</li>
+          <li>No subscription, no renewal</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Buy Now &mdash; $49</a>
+        <p class="pricing-trial-note">Try free for 14 days. No credit card required to start.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2025 shuu1104</p>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="tokushoho.html">Specified Commercial Transactions Act</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
