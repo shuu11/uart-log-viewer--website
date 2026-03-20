@@ -3,21 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UART Log Viewer — Serial Monitor for Embedded Engineers</title>
-  <meta name="description" content="~1ms UART serial monitor with HEX/DEC/ASCII grid, F1–F10 macros, and auto CSV logging. Built in Rust for Windows 11. $49 one-time, 14-day free trial.">
+  <title>UART Log Viewer — Serial Monitor for Windows</title>
+  <meta name="description" content="Real-time UART serial monitor with ~1ms timestamps, HEX/DEC/ASCII grid, F1–F10 macros &amp; auto CSV logging. Windows 11 native. $49 one-time. 14-day free trial.">
+  <meta property="og:title" content="UART Log Viewer — Serial Monitor for Embedded Engineers">
+  <meta property="og:description" content="Stop guessing. See every UART frame timestamped to ~1ms, aligned in HEX/DEC/ASCII, and ready to export. Built in Rust for Windows 11. $49 one-time license.">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="nav">
+  <nav class="nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">UART<span>Log</span>Viewer</a>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
+        <li><a href="#compare">Compare</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="tokushoho.html">Legal Notice</a></li>
       </ul>
@@ -27,26 +32,26 @@
   <!-- Hero -->
   <div class="hero">
     <div class="hero-content">
-      <span class="hero-eyebrow">Windows 11 Desktop App</span>
-      <h1 class="hero-title">Real-Time <span class="accent">UART</span> Monitoring<br>for Embedded Engineers</h1>
-      <p class="hero-subtitle">PuTTY shows you text. UART Log Viewer shows you protocol.<br>Every frame arrives timestamped to ~1ms, aligned in HEX&nbsp;/&nbsp;DEC&nbsp;/&nbsp;ASCII, and ready to export &mdash; all from a Rust backend that never drops a byte.</p>
+      <span class="hero-eyebrow">Windows 11 Desktop App — No Subscription</span>
+      <h1 class="hero-title">See Your Protocol,<br>Not Just <span class="accent">Text</span></h1>
+      <p class="hero-subtitle">PuTTY shows you characters. UART Log Viewer shows you frames &mdash; every packet timestamped to ~1ms, aligned across HEX, DEC, and ASCII columns, and captured by a Rust backend that never drops a byte.</p>
       <div class="hero-cta">
-        <a href="#pricing" class="btn btn-primary">Start Free Trial</a>
-        <a href="#pricing" class="btn btn-outline">Buy Now &mdash; $49</a>
+        <a href="#pricing" class="btn btn-primary">Buy Now &mdash; $49</a>
+        <a href="#pricing" class="btn btn-outline">Start Free Trial</a>
       </div>
-      <p class="hero-platform">Windows 11 native &nbsp;&middot;&nbsp; No subscription &nbsp;&middot;&nbsp; $49 one-time license</p>
+      <p class="hero-platform">Windows 11 native &nbsp;&middot;&nbsp; No credit card for trial &nbsp;&middot;&nbsp; License key delivered instantly</p>
     </div>
     <div class="hero-visual">
       <!-- Terminal mock -->
       <div class="hero-terminal" role="img" aria-label="Sample UART log output showing grid columns with HEX bytes, timestamps, direction, and ASCII">
-        <div class="terminal-titlebar">
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
+        <div class="terminal-titlebar" aria-hidden="true">
+          <span class="terminal-dot terminal-dot-red"></span>
+          <span class="terminal-dot terminal-dot-yellow"></span>
+          <span class="terminal-dot terminal-dot-green"></span>
           <span class="terminal-title">UART Log Viewer &mdash; COM3 &nbsp;115200 baud</span>
           <span class="terminal-status">&#9679; LOGGING</span>
         </div>
-        <div class="terminal-body">
+        <div class="terminal-body" aria-hidden="true">
           <div class="terminal-header-row">
             <span>#</span>
             <span>TIME</span>
@@ -99,6 +104,22 @@
             <span class="t-hex">2C</span>
             <span class="t-ascii">.....,</span>
           </div>
+          <div class="terminal-row terminal-row-rx terminal-row-faded">
+            <span class="t-row-num">4</span>
+            <span class="t-time">00:02.104</span>
+            <span class="t-delta">+206ms</span>
+            <span class="t-dir-rx">RX</span>
+            <span class="t-hex">1A</span>
+            <span class="t-hex">FF</span>
+            <span class="t-hex">03</span>
+            <span class="t-hex">00</span>
+            <span class="t-hex">02</span>
+            <span class="t-hex">90</span>
+            <span class="t-ascii">......</span>
+          </div>
+          <div class="terminal-row terminal-cursor-row">
+            <span class="terminal-cursor"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -118,8 +139,8 @@
       </div>
       <div class="spec-divider"></div>
       <div class="spec-item">
-        <span class="spec-val">F1&ndash;F10</span>
-        <span class="spec-label">Persistent Macros</span>
+        <span class="spec-val">300&ndash;921k</span>
+        <span class="spec-label">Baud Supported</span>
       </div>
       <div class="spec-divider"></div>
       <div class="spec-item">
@@ -134,57 +155,241 @@
   <!-- Features -->
   <section id="features">
     <p class="section-label">// Features</p>
-    <h2 class="section-title">Built for the workbench, not the boardroom</h2>
+    <h2 class="section-title">Built for the Workbench, Not the Boardroom</h2>
+    <p class="section-subhead">Every feature exists because a timing bug, a missing byte, or a dropped frame once cost an engineer hours of work.</p>
     <div class="features-grid">
 
-      <div class="feature-card">
-        <div class="feature-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <div class="feature-card reveal">
+        <div class="feature-card-header">
+          <div class="feature-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
         </div>
-        <h3 class="feature-title">~1ms Timestamp Precision</h3>
-        <p class="feature-desc">Captured at the Rust reader thread before OS scheduling can intervene, every frame carries a monotonic delta (&Delta;T) so you can spot timing violations at a glance.</p>
+        <h3 class="feature-title">Millisecond-Accurate Frame Timing</h3>
+        <p class="feature-desc">Rust captures each frame on a dedicated high-priority thread before Windows scheduling can add jitter. The monotonic delta column shows exactly how long your device waited between responses.</p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <div class="feature-card reveal">
+        <div class="feature-card-header">
+          <div class="feature-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
         </div>
-        <h3 class="feature-title">HEX / DEC / ASCII Grid</h3>
-        <p class="feature-desc">Stop toggling between views &mdash; see all three encodings simultaneously, aligned to configurable bytes-per-row width. Virtual scroll handles 10,000+ entries without a stutter.</p>
+        <h3 class="feature-title">Three Encodings, One View</h3>
+        <p class="feature-desc">Stop toggling between windows. HEX, DEC, and ASCII are always visible side-by-side, column-aligned. Virtual scroll keeps 10,000+ entries smooth.</p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2" ry="2"/><line x1="6" y1="10" x2="6" y2="10"/><line x1="10" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="14" y2="10"/><line x1="18" y1="10" x2="18" y2="10"/><line x1="6" y1="14" x2="18" y2="14"/></svg>
+      <div class="feature-card reveal">
+        <div class="feature-card-header">
+          <div class="feature-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2" ry="2"/><line x1="6" y1="10" x2="6" y2="10"/><line x1="10" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="14" y2="10"/><line x1="18" y1="10" x2="18" y2="10"/><line x1="6" y1="14" x2="18" y2="14"/></svg>
+          </div>
+          <span class="feature-pro-badge">PRO</span>
         </div>
-        <h3 class="feature-title">F1&ndash;F10 Macro Slots</h3>
-        <p class="feature-desc">Store up to 10 commands in HEX, ASCII, or DEC format and fire them with a single function key. Slots persist across sessions &mdash; your test sequences are ready the moment you reconnect.</p>
+        <h3 class="feature-title">One Key to Send Any Command</h3>
+        <p class="feature-desc">Map test sequences to F1&ndash;F10 in HEX, ASCII, or DEC. Macros persist across sessions &mdash; reconnect and your test toolkit is loaded.</p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+      <div class="feature-card reveal">
+        <div class="feature-card-header">
+          <div class="feature-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          </div>
+          <span class="feature-pro-badge">PRO</span>
         </div>
-        <h3 class="feature-title">Auto CSV Logging</h3>
-        <p class="feature-desc">Every received frame is written to disk automatically in CSV format with configurable column width. Open directly in Excel &mdash; no exporting, no copy-paste, no conversion.</p>
+        <h3 class="feature-title">Logs That Open in Excel Instantly</h3>
+        <p class="feature-desc">One click starts recording every frame to Excel-compatible CSV &mdash; column-aligned with timestamps. No export step, no copy-paste.</p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+      <div class="feature-card reveal">
+        <div class="feature-card-header">
+          <div class="feature-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+          </div>
         </div>
-        <h3 class="feature-title">Frame Detection AUTO / MANUAL</h3>
-        <p class="feature-desc">AUTO mode learns packet boundaries from inter-byte timing gaps. MANUAL mode locks to a fixed byte width. Switch mid-session without disconnecting or losing your log.</p>
+        <h3 class="feature-title">Automatic Protocol Boundary Detection</h3>
+        <p class="feature-desc">AUTO mode observes inter-byte timing gaps and learns frame boundaries. MANUAL mode locks to fixed byte width. Switch mid-session without disconnecting.</p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      <div class="feature-card reveal">
+        <div class="feature-card-header">
+          <div class="feature-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
         </div>
-        <h3 class="feature-title">TX History &amp; Quick Send</h3>
-        <p class="feature-desc">Every transmission is logged with a <code>HH:MM:SS.mmm</code> timestamp and full HEX dump. The send bar stays visible in the LOG tab &mdash; fire a command without leaving your log view.</p>
+        <h3 class="feature-title">Always See the Latest Packet</h3>
+        <p class="feature-desc">Monitor mode pins the most recent frame to the top so you can watch state changes in real time &mdash; without scrolling or pausing.</p>
       </div>
 
+      <div class="feature-card reveal">
+        <div class="feature-card-header">
+          <div class="feature-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+          <span class="feature-pro-badge">PRO</span>
+        </div>
+        <h3 class="feature-title">Send Commands Without Leaving Your Log</h3>
+        <p class="feature-desc">The send bar stays visible in the LOG tab. Fire a command and see the response in the same view. Every TX is saved with <code>HH:MM:SS.mmm</code> timestamp.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-card-header">
+          <div class="feature-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </div>
+          <span class="feature-pro-badge">PRO</span>
+        </div>
+        <h3 class="feature-title">Copy Log to Clipboard in One Click</h3>
+        <p class="feature-desc">Select log entries and copy as Excel-ready TSV. Paste directly into spreadsheets or bug reports &mdash; no file dialog, no reformatting.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Why Not PuTTY -->
+  <section id="compare">
+    <p class="section-label">// Why Not PuTTY?</p>
+    <h2 class="section-title">Raw Terminals Are Not Protocol Analyzers</h2>
+    <div class="vs-grid">
+      <div class="vs-panel vs-panel-old reveal">
+        <p class="vs-panel-label">Raw Terminal (PuTTY / Tera Term)</p>
+        <ul class="vs-list">
+          <li class="vs-item-bad">Unparsed byte stream &mdash; no framing</li>
+          <li class="vs-item-bad">No timestamps, no delta-T</li>
+          <li class="vs-item-bad">HEX or text &mdash; never both</li>
+          <li class="vs-item-bad">Manual copy-paste to Excel</li>
+          <li class="vs-item-bad">No macro storage</li>
+          <li class="vs-item-bad">Interpreted language runtime &mdash; jitter</li>
+        </ul>
+      </div>
+      <div class="vs-panel vs-panel-new reveal">
+        <p class="vs-panel-label">UART Log Viewer</p>
+        <ul class="vs-list">
+          <li class="vs-item-good">Auto frame grouping by timing gap</li>
+          <li class="vs-item-good">~1ms monotonic timestamps per frame</li>
+          <li class="vs-item-good">HEX + DEC + ASCII simultaneously</li>
+          <li class="vs-item-good">CSV auto-written to disk on every frame</li>
+          <li class="vs-item-good">F1&ndash;F10 macros, session-persistent</li>
+          <li class="vs-item-good">Rust reader thread, no GC pauses</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Free vs Pro Comparison Table -->
+  <section id="free-vs-pro">
+    <p class="section-label">// Free vs Pro</p>
+    <h2 class="section-title">What's Included</h2>
+    <div class="compare-table-wrap reveal" tabindex="0">
+      <table class="compare-table" role="table">
+        <thead>
+          <tr>
+            <th class="compare-feature-col">Feature</th>
+            <th class="compare-free-col">Free Trial<br><span class="compare-col-sub">14 days</span></th>
+            <th class="compare-pro-col">Pro<br><span class="compare-col-sub">$49 one-time</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>~1ms timestamp precision</td>
+            <td class="compare-check">&#10003;</td>
+            <td class="compare-check compare-pro-col">&#10003;</td>
+          </tr>
+          <tr>
+            <td>HEX / DEC / ASCII grid</td>
+            <td class="compare-check">&#10003;</td>
+            <td class="compare-check compare-pro-col">&#10003;</td>
+          </tr>
+          <tr>
+            <td>Frame detection AUTO / MANUAL</td>
+            <td class="compare-check">&#10003;</td>
+            <td class="compare-check compare-pro-col">&#10003;</td>
+          </tr>
+          <tr>
+            <td>Virtual scroll (10,000 entries)</td>
+            <td class="compare-check">&#10003;</td>
+            <td class="compare-check compare-pro-col">&#10003;</td>
+          </tr>
+          <tr>
+            <td>Real-time monitor mode</td>
+            <td class="compare-check">&#10003;</td>
+            <td class="compare-check compare-pro-col">&#10003;</td>
+          </tr>
+          <tr>
+            <td>F1&ndash;F10 macro slots</td>
+            <td class="compare-cross">&#10007;</td>
+            <td class="compare-check compare-pro-col">&#10003;</td>
+          </tr>
+          <tr>
+            <td>Auto CSV logging</td>
+            <td class="compare-cross">&#10007;</td>
+            <td class="compare-check compare-pro-col">&#10003;</td>
+          </tr>
+          <tr>
+            <td>TSV copy to clipboard</td>
+            <td class="compare-cross">&#10007;</td>
+            <td class="compare-check compare-pro-col">&#10003;</td>
+          </tr>
+          <tr>
+            <td>TX history + quick send</td>
+            <td class="compare-cross">&#10007;</td>
+            <td class="compare-check compare-pro-col">&#10003;</td>
+          </tr>
+          <tr class="compare-duration-row">
+            <td>Duration</td>
+            <td class="compare-duration">14 days</td>
+            <td class="compare-duration compare-pro-col">Lifetime</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Architecture Section -->
+  <section id="architecture">
+    <p class="section-label">// Under the Hood</p>
+    <h2 class="section-title">Real-time because the backend is real-time</h2>
+    <div class="arch-flow" aria-label="Architecture data flow diagram">
+      <div class="arch-node">
+        <span class="arch-node-label">UART Device</span>
+      </div>
+      <div class="arch-arrow" aria-hidden="true">&#8594;</div>
+      <div class="arch-node">
+        <span class="arch-node-label">COM Port</span>
+      </div>
+      <div class="arch-arrow" aria-hidden="true">&#8594;</div>
+      <div class="arch-node arch-node-highlight">
+        <span class="arch-node-label">Rust Thread</span>
+        <span class="arch-node-sub">TIME_CRITICAL</span>
+      </div>
+      <div class="arch-arrow" aria-hidden="true">&#8594;</div>
+      <div class="arch-node">
+        <span class="arch-node-label">Tauri IPC</span>
+      </div>
+      <div class="arch-arrow" aria-hidden="true">&#8594;</div>
+      <div class="arch-node">
+        <span class="arch-node-label">React UI</span>
+      </div>
+    </div>
+    <div class="arch-facts">
+      <div class="arch-fact reveal">
+        <p class="arch-fact-title">THREAD_PRIORITY_TIME_CRITICAL</p>
+        <p class="arch-fact-desc">OS cannot preempt the reader for UI work. Serial bytes are read before any interface update can interrupt.</p>
+      </div>
+      <div class="arch-fact reveal">
+        <p class="arch-fact-title">No GC. No JVM. No Electron.</p>
+        <p class="arch-fact-desc">No garbage collection pause can delay a timestamp capture. Memory is managed at compile time via Rust ownership rules.</p>
+      </div>
+      <div class="arch-fact reveal">
+        <p class="arch-fact-title">Monotonic + Wall-clock dual stamp</p>
+        <p class="arch-fact-desc"><code>Instant</code> for delta-T accuracy, <code>SystemTime</code> for human-readable time. Both captured at thread start for consistent alignment.</p>
+      </div>
     </div>
   </section>
 
@@ -193,13 +398,18 @@
   <!-- Pricing -->
   <section id="pricing">
     <p class="section-label">// Pricing</p>
-    <h2 class="section-title">Pay once. Debug forever.</h2>
+    <h2 class="section-title">Pay Once. Debug Forever.</h2>
+    <p class="section-subhead">One session saved by catching a timing bug early pays for this tool many times over.</p>
     <div class="pricing-wrapper">
       <div class="pricing-card">
-        <span class="pricing-badge">Pro License</span>
+        <span class="pricing-badge">Launch Pricing</span>
         <p class="pricing-label">One-Time Purchase</p>
-        <p class="pricing-price">$49</p>
+        <div class="pricing-price-row">
+          <span class="pricing-price-old">$69</span>
+          <span class="pricing-price">$49</span>
+        </div>
         <p class="pricing-price-note">Lifetime license &mdash; no subscription, no renewal</p>
+        <p class="pricing-value-anchor">One firmware bug traced to a timing issue can cost a day of engineering time. At a standard embedded engineer billing rate, this tool pays for itself in under 30 minutes.</p>
         <ul class="pricing-features">
           <li>~1ms timestamp precision &mdash; monotonic + wall-clock, captured in Rust</li>
           <li>HEX / DEC / ASCII simultaneous grid with configurable bytes-per-row</li>
@@ -210,24 +420,138 @@
           <li>10,000-entry virtual scroll buffer &mdash; no slowdown, no dropped frames</li>
           <li>Windows 11 native &mdash; Rust backend, no GC jitter</li>
         </ul>
-        <a href="#" class="btn btn-primary">Buy Now &mdash; $49</a>
-        <p class="pricing-trial-note">14-day free trial. No credit card required. License key delivered instantly.</p>
+        <a href="#pricing" class="btn btn-primary">Get Pro &mdash; $49 One-Time</a>
+        <a href="#pricing" class="btn btn-outline pricing-trial-btn">Try Free for 14 Days</a>
+        <p class="pricing-trial-note">14-day free trial &nbsp;&middot;&nbsp; No credit card required &nbsp;&middot;&nbsp; License key delivered instantly &nbsp;&middot;&nbsp; Windows 11</p>
+        <p class="pricing-refund">Not the right tool? Contact support within 14 days of purchase for a full refund.</p>
       </div>
     </div>
   </section>
 
+  <hr class="divider">
+
+  <!-- Trust Section -->
+  <section id="trust">
+    <p class="section-label">// Built for Engineers</p>
+    <h2 class="section-title">Trusted by Engineers Who Read Datasheets</h2>
+    <p class="trust-credibility">Built by an embedded systems engineer with hands-on experience in RL78 series microcontrollers. Every feature exists because a real debugging session demanded it.</p>
+    <div class="trust-badges">
+      <div class="trust-badge reveal">
+        <div class="trust-badge-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <p class="trust-badge-label">Rust Backend</p>
+        <p class="trust-badge-sub">No garbage collection, no jitter</p>
+      </div>
+      <div class="trust-badge reveal">
+        <div class="trust-badge-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <p class="trust-badge-label">Source-Accurate Timestamps</p>
+        <p class="trust-badge-sub">Captured before OS scheduler</p>
+      </div>
+      <div class="trust-badge reveal">
+        <div class="trust-badge-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <p class="trust-badge-label">Local Only</p>
+        <p class="trust-badge-sub">No cloud, no telemetry, no data leaves your machine</p>
+      </div>
+      <div class="trust-badge reveal">
+        <div class="trust-badge-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <p class="trust-badge-label">Windows 11 Native</p>
+        <p class="trust-badge-sub">Tauri v2, not Electron</p>
+      </div>
+    </div>
+    <p class="trust-placeholder">Be among the first to share your experience &mdash; download the 14-day trial and let us know what you think.</p>
+  </section>
+
   <!-- Footer -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-left">
-        <p class="footer-copy">&copy; 2026 shuu1104</p>
+    <div class="footer-inner footer-structured">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">UART<span>Log</span>Viewer</a>
         <p class="footer-tagline">Built for Windows 11 &nbsp;&middot;&nbsp; Tauri v2 + Rust</p>
+        <p class="footer-copy">&copy; 2026 shuu1104</p>
       </div>
-      <nav class="footer-links" aria-label="Footer links">
-        <a href="tokushoho.html">Specified Commercial Transactions Act</a>
-      </nav>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-col-heading">Product</p>
+          <nav aria-label="Product links">
+            <a href="#features">Features</a>
+            <a href="#free-vs-pro">Free vs Pro</a>
+            <a href="#pricing">Pricing</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-heading">Legal</p>
+          <nav aria-label="Legal links">
+            <a href="tokushoho.html">Specified Commercial Transactions Act</a>
+          </nav>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <!-- Sticky CTA Bar -->
+  <div class="sticky-cta" id="sticky-cta" aria-hidden="true" aria-label="Purchase prompt">
+    <span class="sticky-cta-text">UART Log Viewer &mdash; $49, lifetime license</span>
+    <div class="sticky-cta-buttons">
+      <a href="#pricing" class="btn btn-primary sticky-btn" tabindex="-1">Buy Now</a>
+      <a href="#pricing" class="btn btn-outline sticky-btn" tabindex="-1">Free Trial</a>
+    </div>
+  </div>
+
+  <script>
+    // Sticky CTA — show after hero scrolls out of view
+    (function () {
+      var hero = document.querySelector('.hero');
+      var bar = document.getElementById('sticky-cta');
+      if (!hero || !bar) return;
+      var stickyBtns = bar.querySelectorAll('.sticky-btn');
+
+      function setVisible(visible) {
+        if (visible) {
+          bar.classList.add('sticky-cta-visible');
+          bar.setAttribute('aria-hidden', 'false');
+          stickyBtns.forEach(function (btn) { btn.setAttribute('tabindex', '0'); });
+        } else {
+          bar.classList.remove('sticky-cta-visible');
+          bar.setAttribute('aria-hidden', 'true');
+          stickyBtns.forEach(function (btn) { btn.setAttribute('tabindex', '-1'); });
+        }
+      }
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          setVisible(!entries[0].isIntersecting);
+        }, { threshold: 0 });
+        obs.observe(hero);
+      }
+    })();
+
+    // Scroll reveal animation
+    (function () {
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+      var revealObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(function (el) { revealObs.observe(el); });
+    })();
+  </script>
 
 </body>
 </html>
